@@ -59,13 +59,13 @@ import React, { Component } from 'react';
           <div >
           <div style={{fontWeight:'bolder',}}>ID: {this.state.employee.id}</div>
           <div style={{fontWeight:'bolder',}}> jobTitleName:{this.state.employee.jobTitleName}</div>
-          <div style={{fontWeight:'bolder',}}>firstname:{this.state. employee.firstname}</div>
-          <div style={{fontWeight:'bolder',}}>lastname:{this.state.employee.lastname}</div>
-          <div style={{fontWeight:'bolder',}}>PreferedFullName:{this.state.employee.PreferedFullName}</div>
-          <div style={{fontWeight:'bolder',}}>employeeCode:{this.state.employee.employeeCode}</div>
-          <div style={{fontWeight:'bolder',}}>region:{this.state.employee.region}</div>
-          <div style={{fontWeight:'bolder',}}>phoneNumber:{this.state.employee.phoneNumber}</div>
-          <div style={{fontWeight:'bolder',}}>emailAddress:{this.state.employee.emailAddress}</div>
+          <div style={{fontWeight:'bolder',}}>firstname:{this.state.firstname}</div>
+          <div style={{fontWeight:'bolder',}}>lastname:{this.state.lastname}</div>
+          <div style={{fontWeight:'bolder',}}>PreferedFullName:{this.state.PreferedFullName}</div>
+          <div style={{fontWeight:'bolder',}}>employeeCode:{this.state. employeeCode}</div>
+          <div style={{fontWeight:'bolder',}}>region:{this.state.region}</div>
+          <div style={{fontWeight:'bolder',}}>phoneNumber:{this.state.phoneNumber}</div>
+          <div style={{fontWeight:'bolder',}}>emailAddress:{this.state.emailAddress}</div>
           </div>
         ); //return
         } //render

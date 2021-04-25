@@ -40,7 +40,6 @@ import React, { Component } from 'react';
       {
         super();
         this.state={
-          employee:{
           id:1,
           jobTitleName:"developer",
           firstname:"Marwa",
@@ -50,22 +49,24 @@ import React, { Component } from 'react';
           region:"CA",
           phoneNumber:"408-1234567",
           emailAddress:"marwa@gmail.com"
-          }
+
       }
     }
 
       render(){
         return (
           <div >
-          <div style={{fontWeight:'bolder',}}>ID: {this.state.employee.id}</div>
-          <div style={{fontWeight:'bolder',}}> jobTitleName:{this.state.employee.jobTitleName}</div>
-          <div style={{fontWeight:'bolder',}}>firstname:{this.state. employee.firstname}</div>
-          <div style={{fontWeight:'bolder',}}>lastname:{this.state.employee.lastname}</div>
-          <div style={{fontWeight:'bolder',}}>PreferedFullName:{this.state.employee.PreferedFullName}</div>
-          <div style={{fontWeight:'bolder',}}>employeeCode:{this.state.employee.employeeCode}</div>
-          <div style={{fontWeight:'bolder',}}>region:{this.state.employee.region}</div>
-          <div style={{fontWeight:'bolder',}}>phoneNumber:{this.state.employee.phoneNumber}</div>
-          <div style={{fontWeight:'bolder',}}>emailAddress:{this.state.employee.emailAddress}</div>
+          <div style={{fontWeight:'bolder',}}>ID: {this.state.id}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.jobTitleName}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.firstname}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.lastname}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.PreferedFullName}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state. employeeCode}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.region}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.phoneNumber}</div>
+          <div style={{fontWeight:'bolder',}}>{this.state.emailAddress}</div>
+
+
           </div>
         ); //return
         } //render
@@ -76,8 +77,8 @@ import React, { Component } from 'react';
     return (
 
       <div className="App"  >
-    <div style={{ paddingTop: 110, }}>< Webapp /></div>
     <div style={{ paddingTop: 100, }}><Counter  /></div>
+    <div style={{ paddingTop: 110, }}>< Webapp /></div>
     </div>
 
 
