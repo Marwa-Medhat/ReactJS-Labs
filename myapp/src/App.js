@@ -57,15 +57,26 @@ import React, { Component } from 'react';
       render(){
         return (
           <div >
+            <h1>Display Object json</h1>
+            <hr></hr>
           <div style={{fontWeight:'bolder',}}>ID: {this.state.employee.id}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}> jobTitleName:{this.state.employee.jobTitleName}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>firstname:{this.state. employee.firstname}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>lastname:{this.state.employee.lastname}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>PreferedFullName:{this.state.employee.PreferedFullName}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>employeeCode:{this.state.employee.employeeCode}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>region:{this.state.employee.region}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>phoneNumber:{this.state.employee.phoneNumber}</div>
+          <br></br>
           <div style={{fontWeight:'bolder',}}>emailAddress:{this.state.employee.emailAddress}</div>
+          <br></br>
           </div>
         ); //return
         } //render
@@ -76,7 +87,7 @@ import React, { Component } from 'react';
     return (
 
       <div className="App"  >
-    <div style={{ paddingTop: 110, }}>< Webapp /></div>
+    <div style={{ paddingTop: 30, }}>< Webapp /></div>
     <div style={{ paddingTop: 100, }}><Counter  /></div>
     </div>
 
