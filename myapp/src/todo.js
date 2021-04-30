@@ -57,6 +57,8 @@ class Todo extends React.Component{
 
             })
             this.setState({contents: tasks })
+            this.saveToLocalStorage();
+
         //this.setState({mark: !this.state.contents[index].mark},()=>{console.log(this.state.contents[index])})
         // console.log(this.state.contents[index].mark)
         // this.setState({contents:this.state.contents});
