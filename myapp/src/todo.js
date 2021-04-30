@@ -145,7 +145,7 @@ class DisplayTask extends React.Component{
     }
     // style={{backgroundColor: "lightblue"}}
     render(){
-        let btn_class = this.props.mark ? "blackButton" : "whiteButton";
+        let btn_class = this.props.mark ? "Done" : "NotDone";
         return <div  className={" list-group-item list-group-item-action "+btn_class} style={{display: 'inline-block'}} >
       <a style={{width:600 ,fontWeight:'bolder',marginRight:50,}}>{this.props.content.content} 
      </a>
