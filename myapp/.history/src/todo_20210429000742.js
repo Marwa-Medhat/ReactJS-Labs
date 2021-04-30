@@ -10,12 +10,12 @@ class Todo extends React.Component{
         super();
         this.state={
             contents:[
-                {
-                content:"null",
+                { 
+                content:"",
                 mark:false,
                 }
             ],
-            
+              
         }
     }
     componentDidMount(){
@@ -33,32 +33,14 @@ class Todo extends React.Component{
         this.setState({contents:this.state.contents});
         this.saveToLocalStorage();
     }
-    // deleteContent=(content)=>{
-    //     this.state.contents.pop(content);
-    //     this.setState({contents:this.state.contents});
-    //     this.saveToLocalStorage();
-    // }
-    deleteContent=(index)=>{   
-
-       console.log(index)
-        this.state.contents.splice(index, 1);
+    deleteContent=(content)=>{
+        this.state.contents.pop(content);
         this.setState({contents:this.state.contents});
         this.saveToLocalStorage();
     }
-    markContent=(index1)=>{
+    markContent=(content,index)=>{
         // // this.state.mark=1;
-        let tasks=this.state.contents
-         tasks.map((content, index) => {
-                console.log(content,index)
-                if(index == index1)
-                {
-                 content.mark= ! content.mark;
-                }
-
-            })
-            this.setState({contents: tasks })
-        //this.setState({mark: !this.state.contents[index].mark},()=>{console.log(this.state.contents[index])})
-        // console.log(this.state.contents[index].mark)
+        this.setState({mark: !this.state.contents.mark})
         // this.setState({contents:this.state.contents});
         // this.saveToLocalStorage();
     }
@@ -85,15 +67,13 @@ class AddTask extends React.Component{
         super();
         this.state={
             content:"",
-            mark:false,
            
         }
     }
 
     addContent=()=>{
         let content = {
-            content:this.state.content,
-            mark:this.state.mark, 
+            content:this.state.content, 
         }
 
         this.props.addContent(content);
@@ -116,12 +96,9 @@ class DisplayTasks extends React.Component{
         }
     
     render(){
-        return <div class="list-group " style={{display: 'inline-block'}}>          
-            {this.props.contents.length > 0 ?this.props.contents.map((item,index)=>{
-                return <div style={{display: 'inline-block'}}> 
-                    <DisplayTask  content={item} key={item.content} mark={item.mark} markContent={this.props.markContent} deleteContent={this.props.deleteContent} />  
-                    <button  onClick={()=>{this.props.markContent(index)}} className="btn btn-success " style={{ marginLeft: 400,marginRight: 10 ,paddingRight:10}}><i className="fa fa-check "></i></button> 
-                   <button onClick={()=>{this.props.deleteContent(index)}}  className="btn btn-danger" ><i className="fa fa-times btn-danger" ></i></button></div> 
+        return <div class="list-group ">          
+            {this.props.contents.length > 0 ?this.props.contents.map((item)=>{
+                return <DisplayTask content={item} key={item.content} mark={this.props.contents.mark} markContent={this.props.markContent} deleteContent={this.props.deleteContent} />
             }):"Empty"}
         </div>
     }
@@ -146,9 +123,11 @@ class DisplayTask extends React.Component{
     // style={{backgroundColor: "lightblue"}}
     render(){
         let btn_class = this.props.mark ? "blackButton" : "whiteButton";
-        return <div  className={" list-group-item list-group-item-action "+btn_class} style={{display: 'inline-block'}} >
+        return <div  className={" list-group-item list-group-item-action "+btn_class} >
       <a style={{width:600 ,fontWeight:'bolder',marginRight:50,}}>{this.props.content.content} 
-     </a>
+      <button  onClick={this.props.markContent} className="btn btn-success " style={{ marginLeft: 400,marginRight: 10 ,paddingRight:10}}><i className="fa fa-check "></i></button> 
+      <button onClick={this.props.deleteContent}  className="btn btn-danger" ><i className="fa fa-times btn-danger" ></i></button></a>
+      
     </div>
     }
 }
